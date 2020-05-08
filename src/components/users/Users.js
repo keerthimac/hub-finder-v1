@@ -3,14 +3,15 @@ import Useritem from './Useritem';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 
-const Users = ({ users, loading }) => {
+const Users = ({ users, loading, searchUser }) => {
+  // console.log(searchUser);
   if (loading) {
     return <Spinner />;
   } else {
     return (
       <div style={userStyle}>
         {users.map((user) => (
-          <Useritem key={user.id} user={user} />
+          <Useritem key={user.id} user={user} searchUser={searchUser} />
         ))}
       </div>
     );
