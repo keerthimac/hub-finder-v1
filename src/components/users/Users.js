@@ -9,7 +9,7 @@ const Users = ({ users, loading, searchUser }) => {
     return <Spinner />;
   } else {
     return (
-      <div style={userStyle}>
+      <div className="grid-3">
         {users.map((user) => (
           <Useritem key={user.id} user={user} searchUser={searchUser} />
         ))}
@@ -18,11 +18,11 @@ const Users = ({ users, loading, searchUser }) => {
   }
 };
 
-const userStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3,1fr)',
-  gridGap: '1rem',
-};
+// const userStyle = {
+//   display: 'grid',
+//   gridTemplateColumns: 'repeat(3,1fr)',
+//   gridGap: '1rem',
+// };
 
 Users.prototype = {
   users: PropTypes.array.isRequired,
